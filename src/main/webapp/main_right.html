@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>clock</title>
+
+</head>
+<body background="img/背景.png" style="background-repeat: no-repeat; background-size: cover
+; background-attachment: fixed">
+<br /><br /><br /><br />
+<br /><br /><br /><br />
+<center>
+	<h1 ><span id="time"></span></h1>
+	<h5  ><span id="year+month+day"></span></h5>
+	<h2>管理员 欢迎回来...</h2>
+</center>
+
+</body>
+<script>
+    function getTime(){
+
+        var date = new Date();
+
+        var year = date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日";
+
+        var min = date.getMinutes()+"";
+        if (min.length == 1)
+        {
+            min = "0"+min;
+        }
+
+        var sec = date.getSeconds()+"";
+        if (sec.length == 1)
+        {
+            sec = "0"+sec;
+        }
+
+        var time = date.getHours()+":"+min+":"+sec;
+
+        var span_time = document.getElementById("time");
+        var span_year = document.getElementById("year+month+day");
+
+        span_time.innerHTML=time.fontcolor("black");
+        span_year.innerHTML=year.fontcolor("black");
+
+    }
+    window.setInterval("getTime()", 1000);
+
+</script>
+</html>

@@ -1,0 +1,5 @@
+main.html是主界面，其中包含3个html文件
+	main_head.html是main.html中上面的图片
+	main_left.html是main.html中左边的几个标签
+	main_right.html是main.html中右边的显示信息界面
+insert.html是插入信息的界面

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+							<!--****演示的时候：浏览器页面大小百分之九十******切记-->
+	<body background="img/登录图片.PNG" style="background-repeat: no-repeat; background-size: 100%" >
+		
+		<input type="text" name="username" id="username" onfocus="name_focus()" onblur="name_blur()" value="请输入管理员账号" 
+			style="font-size: larger;color: midnightblue; margin-left: 775px; margin-top: 370px;
+			width: 220px;height: 28px;"/><span id="usernameSpan" ></span>
+			
+		<input type="password" id="password" name="passwrd" onblur="passwdBlue()"  value="" 
+			style=" margin-left: 775px; margin-top: 37px; width: 220px;height: 28px;"/><span id="password_span"></span>
+		
+		<input type="submit" id="submit" value="登录"  onclick="jump()"
+			style=" margin-left: 790px; margin-top: 38px; backface-visibility: hidden; width: 120px; height: 38px; 
+			background-color: dodgerblue; font: '微软雅黑'; font-size: 25px;"
+			/>
+	
+	</body>
+	
+	<script type="text/javascript">
+	
+		// 获取焦点的时候将文本框信息清空
+		function name_focus(){
+			
+			var name = document.getElementById("username");
+			name.value="";
+		}
+	
+		// 失去焦点的时候判断用户名是否是root
+			function name_blur()
+			{
+				var name = document.getElementById("username");
+				var span = document.getElementById("usernameSpan");
+				if(name.value != "root")
+				{
+					span.innerHTML="用户名不可用".fontcolor("red");
+				}
+				else
+				{
+					span.innerHTML="";
+				}
+			}
+			
+			function passwdBlue()
+			{
+				var passwd = document.getElementById("password").value;
+				var span = document.getElementById("password_span");
+				if (passwd != "123456")
+				{
+					span.innerHTML="密码错误!!!".fontcolor("red");
+				}
+				else
+				{
+					span.innerHTML = "";
+				}
+			}
+			function jump()
+			{
+				var userName= document.getElementById("username");
+				var password = document.getElementById("password");
+				if (userName.value == "root" && password.value == "123456")
+				{
+					window.location.href="main.html";
+				}
+				else
+				{
+					alert("请输入正确的用户名和密码!!!");
+				}
+			}
+	</script>
+	
+</html>
